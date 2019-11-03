@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Intro2Angular": {
+    "my-first-app": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Intro2Angular",
+            "outputPath": "dist/my-first-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Intro2Angular:build"
+            "browserTarget": "my-first-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Intro2Angular:build:production"
+              "browserTarget": "my-first-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Intro2Angular:build"
+            "browserTarget": "my-first-app:build"
           }
         },
         "test": {
@@ -111,15 +111,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "Intro2Angular:serve"
+            "devServerTarget": "my-first-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "Intro2Angular:serve:production"
+              "devServerTarget": "my-first-app:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "Intro2Angular"
+  "defaultProject": "my-first-app"
 }
