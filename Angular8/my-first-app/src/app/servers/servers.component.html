@@ -1,2 +1,36 @@
-<app-server></app-server>
-<app-server></app-server>
+<label>Server Name</label>
+
+<!-- $event is the data included with that event -->
+<!-- <input 
+    type="text" 
+    class="form-control"
+    (input)="onUpdateServerName($event)"> -->
+
+<!-- Two way data binding using [(ngModel)] -->
+<input 
+    type="text" 
+    class="form-control"
+    [(ngModel)]="serverName">
+
+<!-- <p>{{ serverName }}</p> -->
+
+<button 
+    class="btn btn-primary"
+    [disabled]="!allowNewServer"
+    (click)="onCreateServer()"
+    >Add Server</button>
+
+<!-- Another way to use property binding -->
+<!-- <p [innerText]="allowNewServer"></p> -->
+<!-- <p>{{ serverCreationStatus }}</p> -->
+
+<!-- Using directives with if/else statement -->
+<!-- <p *ngIf="serverCreated; else noServer">Server was created, server name = {{ serverName }}</p>
+<ng-template #noServer>
+    <p>No server created</p>
+</ng-template> -->
+
+<p *ngIf="serverCreated">Server was created, server name = {{ serverName }}</p>
+
+<!-- This loops through all of the servers in the servers array and adds them -->
+<app-server *ngFor="let server of servers"></app-server>
